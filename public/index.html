@@ -76,6 +76,8 @@
 				const getMoodPromise = MoodContract.getMood();
 				const Mood = await getMoodPromise;
 				console.log(Mood);
+				var s = document.getElementById("currentMood");
+				s.innerHTML = Mood;
 			}
 			
 			async function setMood() {
@@ -87,12 +89,16 @@
   </head>
 	<body>
 	  <div>
-	    <h1>This is my dApp!</h1>
-	    <p>Here we can set or get the mood:</p>
+	    <h1>Example dapp</h1>
+	    <p>Here we can set or get the mood</p><br><br>
+			<label>Current mood:</label>
+			<p id="currentMood">//</p><br><br>
 	    <label for="mood">Input Mood:</label> <br />
 	    <input type="text" id="mood" />
 			<button onclick="getMood()">Get Mood</button>
-			<button onclick="setMood()">Set Mood</button>
+			<button onclick="setMood()">Set Mood</button><br><br>
+			<p>contract addr:</p>
+			<h6>0xEB3ef0A0e94b1b68EA9CA6bFd2Af079b3B50C4c3</h6>
 	  </div>
 	</body>
 </html>
